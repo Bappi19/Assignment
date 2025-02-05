@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+
+class AddEmployeeForm extends StatelessWidget {  // Create a StatelessWidget class
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Text("Add Employee"),  // Use Text directly
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),  // Add padding for better layout
+        child: Column(
+          children: [
+            Form(
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Enter your Name",
+                      labelText: "Name",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Enter your Age",
+                      labelText: "Age",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Enter Salary",
+                      labelText: "Salary",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,  // Make the button full-width
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                ),
+                onPressed: () {
+                  // Add submit logic here
+                },
+                child: Text("Submit", style: TextStyle(color: Colors.white)),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: AddEmployeeForm(),  // Set this screen as the home screen
+  ));
+}
